@@ -1,1 +1,6 @@
-{}
+{
+    "farming_in_progress": "%s wird gefarmt...",
+    "farming_started": "%s wird nun gefarmt.",
+    "farming_stopped": "%s wird nicht mehr gefarmt.",
+    "not_farming": "Du farmst gerade nicht."
+}

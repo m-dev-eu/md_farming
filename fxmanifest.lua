@@ -9,11 +9,15 @@ version '0.0.0'
 license 'GNU General Public License v3.0'
 
 dependencies {
+    'es_extended',
     'oxmysql',
     'ox_lib',
 }
 
-shared_script '@ox_lib/init.lua'
+shared_scripts {
+    '@es_extended/imports.lua',
+    '@ox_lib/init.lua',
+}
 
 client_script 'init.lua'
 

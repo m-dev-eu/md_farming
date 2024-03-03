@@ -5,7 +5,9 @@ Shared = {
 if IsDuplicityVersion() then
     Server = {}
 else
-    Client = {}
+    Client = {
+        target = GetResourceState('ox_target') == 'started' and (GetConvarInt('md_dailyrewards:target', 0) == 1)
+    }
 end
 
 if not lib then
