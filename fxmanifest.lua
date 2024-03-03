@@ -4,8 +4,9 @@ use_experimental_fxv2_oal 'yes'
 lua54 'yes'
 
 author 'm-dev.eu'
-description 'Wheelclamp'
-version '1.1'
+description 'Farming'
+version '0.0.0'
+license 'GNU General Public License v3.0'
 
 dependencies {
     'oxmysql',
@@ -22,10 +23,9 @@ server_scripts {
 }
 
 files {
-    'locales/*.json',
-    'data/*.*',
-    'client.lua',
     'modules/**/client.lua',
+    'modules/**/shared.lua',
+    'locales/*.json',
+    'data/*.lua',
+    'client.lua',
 }
-
--- setr mdevelopment:framework "esx"
