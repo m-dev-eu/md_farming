@@ -15,11 +15,13 @@ end
 lib.callback.register('md_farming:server:farm', function (source, requiredItems, resultItems)
     local playerId = source
     if not Player(playerId).state.isFarming then
-        return false, locale('not_farming')
+        return false, locale('not_farming_atm')
     end
 
     local xPlayer = ESX.GetPlayerFromId(playerId)
     if not xPlayer then
-        return false, 'player not found'
+        return false, locale('player_not_found')
     end
+
+
 end)
