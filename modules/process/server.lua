@@ -1,4 +1,4 @@
-lib.callback.register('md_farming:server:farm', function (source, requiredItems, resultItems)
+lib.callback.register('md_processing:server:process', function (source, requiredItems, resultItems)
     local playerId = source
     if not Player(playerId).state.isFarming then return false, locale('not_farming_atm') end
 
@@ -17,17 +17,17 @@ lib.callback.register('md_farming:server:farm', function (source, requiredItems,
 
     for _, item in pairs(requiredItems) do
         if not Server.hasPlayerInventoryItem(xPlayer, item.name, item.count) then
-            return false, Server.generateItemMessage('farming_lack_of_items', requiredItems)
+            return false, Server.generateItemMessage('processing_lack_of_items', requiredItems)
         end
     end
 
     for _, item in pairs(resultItems) do
         if not xPlayer.canCarryItem(item.name, item.count) then
-            return false, locale('farming_not_enough_place')
+            return false, locale('processing_not_enough_place')
         end
 
         xPlayer.addInventoryItem(item.name, item.count)
     end
 
-    return true, Server.generateItemMessage('farming_success', resultItems)
+    return true, Server.generateItemMessage('processing_success', resultItems)
 end)

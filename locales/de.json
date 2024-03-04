@@ -1,11 +1,18 @@
 {
     "player_not_found": "Der Spieler wurde nicht gefunden.",
     "invalid_configuration": "Die Konfiguration weißt einen Fehler auf.",
+    "not_farming_atm": "Du farmst gerade nicht.",
     "farming_in_progress": "%s wird gefarmt...",
     "farming_started": "%s wird nun gefarmt.",
     "farming_stopped": "%s wird nicht mehr gefarmt.",
     "farming_not_enough_place": "Du hast nicht genug Platz in deinem Inventar.",
-    "not_farming_atm": "Du farmst gerade nicht.",
     "farming_lack_of_items": "Du hast nicht alles was du zum farmen brauchst. Folgendes brauchst du: **%s**.",
-    "farming_success": "Du hast erfolgreich **%s** gefarmt."
+    "farming_success": "Du hast erfolgreich **%s** gefarmt.",
+    "processing_in_progress": "%s wird vearbeitet...",
+    "processing_started": "Du verarbeitest nun **%s**.",
+    "processing_stopped": "Du verarbeitest nun nicht mehr **%s**.",
+    "processing_not_enough_place": "Du hast nicht genug Platz in deinem Inventar.",
+    "processing_lack_of_items": "Du hast nicht alles was du zum Verarbeiten brauchst. Folgendes brauchst du: **%s**.",
+    "processing_success": "Du hast erfolgreich **%s** durch die Verarbeitung erhalten.."
+
 }
