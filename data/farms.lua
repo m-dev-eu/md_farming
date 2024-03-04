@@ -10,7 +10,11 @@ return {
             clip = 'pickup_snowball',
         },
         farmProcess = {
-            duration = 5000
+            duration = 5000,
+            resultItems = {
+                { name = 'water', count = 1 }
+            },
+            requiredItems = {}
         },
         range = 5.0,
         blip = {

@@ -32,7 +32,6 @@ local function toggleFarming(farmId)
                 },
                 canCancel = false
             })
-
             local success, msg = lib.callback.await('md_farming:server:farm', false, farm.farmProcess.requiredItems, farm.farmProcess.resultItems)
             lib.notify({
                 type = success and 'success' or 'error',
