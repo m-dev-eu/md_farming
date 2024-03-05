@@ -1,10 +1,10 @@
 if not lib then return end
 lib.locale()
 
-local baseModule = require 'modules.baseModule.client'
+local baseZoneModule = require 'modules.baseZoneModule.client'
 
-baseModule.initBaseModule('action_farm', 'data.farms')
-baseModule.initBaseModule('action_process', 'data.processStations')
+baseZoneModule.initBaseModule('action_farm', 'data.farms')
+baseZoneModule.initBaseModule('action_process', 'data.processStations')
 
 AddEventHandler('onResourceStop', function ()
     LocalPlayer.state:set('isFarming', false, true)
