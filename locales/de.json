@@ -1,5 +1,6 @@
 {
     "action_farm": "sammelst",
+    "action_process": "verarbeitest",
     "action_started": "Du %s nun.",
     "action_stopped": "Du %s nun nicht mehr.",
     "action_in_progress": "Du %s...",
