@@ -1,23 +1,25 @@
 return {
-    Oranges = {
-        position = vec3(325.5929, -210.0867, 53.0863),
-        animation = {
-            dict = 'anim@mp_snowball',
-            clip = 'pickup_snowball',
-        },
-        farmProcess = {
-            duration = 5000,
-            resultItems = {
-                { name = 'water', count = 1 }
-            },
-            requiredItems = {}
-        },
+    Water = {
+        label = 'Water Farming',
         range = 5.0,
+        position = vec3(1988.3424, 500.6478, 162.8061),
         blip = {
-            sprite = 354, colour = 64, name = 'Orange Farm'
-        },
-        marker = {
-            type = 1, colour = vec4(255, 0, 0, 125)
+            sprite = 487, colour = 3, scale = 0.9
+        }, marker = {
+            type = 1, colour = vec4(255, 165, 0, 190)
+        }, action = {
+            duration = 5000,
+            animation = {
+                dict = 'anim@mp_snowball',
+                clip = 'pickup_snowball',
+                flag = 1
+            },
+            sourceItems = {
+                name = 'empty_bottle', count = 1
+            },
+            productItems = {
+                name = 'water', count = 1
+            }
         }
     }
 }
