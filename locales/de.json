@@ -6,5 +6,7 @@
     "action_in_progress": "Du %s...",
     "items_missing_error": "Folgende Gegenstände fehlen dir: **%s**.",
     "items_no_space_error": "Du hast nicht genug Platz in deinem Inventar.",
-    "items_converted_success": "Du hast die Gegenstände erhalten!"
+    "items_converted_success": "Du hast die Gegenstände erhalten!",
+    "interact_sell": "Verkaufen",
+    "interact_help": "%s "
 }
