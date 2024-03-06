@@ -8,4 +8,8 @@ baseZoneModule.initBaseModule('action_process', 'data.processStations')
 
 AddEventHandler('onResourceStop', function ()
     LocalPlayer.state:set('isFarming', false, true)
+
+    if Client.textUIActive then
+        lib.hideTextUI()
+    end
 end)

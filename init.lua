@@ -1,12 +1,15 @@
 Shared = {
     resource = GetCurrentResourceName(),
-    target = GetConvarInt('md_farming:target', 1) == 1
+    target = GetConvarInt('md_farming:target', 1) == 1,
+    textUI = GetConvarInt('md_farming:textUI', 1) == 1
 }
 
 if IsDuplicityVersion() then
     Server = {}
 else
-    Client = {}
+    Client = {
+        textUIActive = false
+    }
 end
 
 if not lib then
