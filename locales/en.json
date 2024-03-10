@@ -1,0 +1,14 @@
+{
+    "action_farm": "collect",
+    "action_process": "process",
+    "action_started": "You %s.",
+    "action_stopped": "You don't %s anymore.",
+    "action_in_progress": "You %s...",
+    "items_missing_error": "You lack the following items: **%s**.",
+    "items_no_space_error": "You don't have enough space.",
+    "items_converted_success": "You got some items.",
+    "interact_sell": "Sell",
+    "interact_help": "[E] %s ",
+    "interact_sell_alert_header": "Sell Offer",
+    "interact_sell_alert_content": "Do you want to sell **%s** for **%s**?"
+}
