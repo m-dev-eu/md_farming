@@ -1,7 +1,7 @@
 Shared = {
     resource = GetCurrentResourceName(),
-    target = GetConvarInt('md_farming:target', 1) == 1,
-    textUI = GetConvarInt('md_farming:textUI', 1) == 1
+    target = GetConvarInt('md_farming:target', 0) == 1,
+    textUI = GetConvarInt('md_farming:textUI', 1) == 1,
 }
 
 if IsDuplicityVersion() then
