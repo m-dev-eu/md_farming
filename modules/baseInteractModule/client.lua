@@ -1,7 +1,56 @@
 if not lib then return end
+local cachedMessages = {}
 
-local function sellItems(value)
-    -- TODO: This
+local function sellItems(name, value)
+    local message = cachedMessages[name] or ''
+    local alert = lib.alertDialog({
+        header = locale('interact_sell_alert_header'),
+        content = message,
+        cancel = true,
+        centered = true
+    })
+
+    if alert == 'cancel' then return end
+
+    LocalPlayer.state:set('isFarming', true, true)
+    local success, result = lib.callback.await('md_farming:server:convertItems', false, value.action.sourceItems, value.action.productItems)
+    if result then
+        lib.notify({
+            type = success and 'success' or 'error',
+            description = result
+        })
+    end
+
+    LocalPlayer.state:set('isFarming', false, true)
+end
+
+local function generateMessage(sourceItems, productItems)
+    if table.type(sourceItems) == 'hash' then
+        sourceItems = {sourceItems}
+    end
+    if table.type(productItems) == 'hash' then
+        productItems = {productItems}
+    end
+
+    local sourceMessage = ''
+    local lastItem = sourceItems[#sourceItems]
+    for _, item in ipairs(sourceItems) do
+        sourceMessage = sourceMessage .. ('%sx %s'):format(item.count, item.name)
+        if item ~= lastItem then
+            sourceMessage = sourceMessage .. ', '
+        end
+    end
+
+    local productMessage = ''
+    lastItem = productItems[#productItems]
+    for _, item in ipairs(productItems) do
+        productMessage = productMessage .. ('%sx %s'):format(item.count, item.name)
+        if item ~= lastItem then
+            productMessage = productMessage .. ', '
+        end
+    end
+
+    return locale('interact_sell_alert_content', sourceMessage, productMessage)
 end
 
 local createBlip = require 'modules.blip.client'.createBlip
@@ -25,6 +74,9 @@ local function initBaseModule(action_name, path)
                 label = interactMessage,
                 icon = 'fas fa-handshake',
                 distance = value.range,
+                onSelect = function ()
+                    sellItems(name, value)
+                end
             })
             
             goto continue
@@ -33,7 +85,7 @@ local function initBaseModule(action_name, path)
         lib.points.new({
             coords = value.position,
             distance = value.range,
-            onEnter = function (self)
+            onEnter = function ()
                 if not Shared.textUI then return end
 
                 lib.showTextUI(interactMessage, {
@@ -42,20 +94,21 @@ local function initBaseModule(action_name, path)
 
                 Client.textUIActive = true
             end,
-            onExit = function (self)
+            onExit = function ()
                 if not Shared.textUI or not Client.textUIActive then return end
                 lib.hideTextUI()
 
                 Client.textUIActive = false
             end,
-            nearby = function (self)
+            nearby = function ()
                 if IsControlJustReleased(0, 38) and not LocalPlayer.state.isFarming then
-                    sellItems(value)
+                    sellItems(name, value)
                 end
             end
         })
 
         ::continue::
+        cachedMessages[name] = generateMessage(value.action.sourceItems, value.action.productItems)
     end
 end
 

@@ -1,5 +1,11 @@
 # md_farming
 
+## 🦺 Installation & Configuration
+Install the dependencies: **es_extended**, **oxmysql**, **ox_lib**. Setup the convars:
+- `setr md_farming:target 1` to use ox_target
+- `setr md_farming:textUI 1` to use the textui (note target will override this)
+Configure the zones in the *data* folder. `sourceItems` and `productItems` can be a table in form of a hash and a table in form of an array, for multiple items.
+
 ## 📚 Documentation
 Documentation not made yet, you may seek support via GitHub Issues or our Discord server.
 

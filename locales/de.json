@@ -8,5 +8,7 @@
     "items_no_space_error": "Du hast nicht genug Platz in deinem Inventar.",
     "items_converted_success": "Du hast die Gegenstände erhalten!",
     "interact_sell": "Verkaufen",
-    "interact_help": "%s "
+    "interact_help": "%s ",
+    "interact_sell_alert_header": "Verkaufsangebot",
+    "interact_sell_alert_content": "Möchtest du **%s** für **%s** verkaufen?"
 }
