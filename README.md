@@ -10,7 +10,6 @@ Configure the zones in the *data* folder. `sourceItems` and `productItems` can b
 Documentation not made yet, you may seek support via GitHub Issues or our Discord server.
 
 ## 💾 Download
-This link may not work yet, because not release is made. <br/>
 https://github.com/m-dev-eu/md_farming/releases/latest/download/md_farming.zip
 
 ## 📜 Licensing
