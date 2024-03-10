@@ -5,7 +5,7 @@ lua54 'yes'
 
 author 'm-dev.eu'
 description 'Farming'
-version '1.0.0'
+version '1.0.1'
 license 'GNU General Public License v3.0'
 
 dependencies {
